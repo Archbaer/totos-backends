@@ -1,0 +1,8 @@
+com\totos\productsAPI\controllers\ProductController.class
+com\totos\productsAPI\filter\JwtAuthenticationFilter.class
+com\totos\productsAPI\repositories\ProductsRepository.class
+com\totos\productsAPI\services\PublicKeyService.class
+com\totos\productsAPI\models\Products.class
+com\totos\productsAPI\config\SecurityConfig.class
+com\totos\productsAPI\ProductsApiApplication.class
+com\totos\productsAPI\services\ProductsService.class

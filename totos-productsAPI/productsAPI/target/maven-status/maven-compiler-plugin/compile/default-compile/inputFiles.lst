@@ -1,0 +1,8 @@
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\config\SecurityConfig.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\controllers\ProductController.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\filter\JwtAuthenticationFilter.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\models\Products.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\ProductsApiApplication.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\repositories\ProductsRepository.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\services\ProductsService.java
+C:\Users\archb\Documents\projects\totos-productsAPI\productsAPI\src\main\java\com\totos\productsAPI\services\PublicKeyService.java
