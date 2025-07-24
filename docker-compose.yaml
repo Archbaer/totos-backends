@@ -4,12 +4,34 @@ services:
   apigateway:
     build: ./totos-apigateway/apigateway/
     container_name: apigateway
+    depends_on:
+      - mysql
+  authapi:
+      build: ./totos-authAPI/auth-api/
+      container_name: authapi
+      environment:
+        - DB_URL=jdbc:mysql://mysql:3306/usersdb
+        - DB_USERNAME=root
+        - DB_PASSWORD=1258963abc
+      depends_on:
+        - mysql
+        - apigateway
+  productsapi:
+    build: ./totos-productsAPI/productsAPI/
+    container_name: productsapi
     environment:
-      - DB_URL=mysql://mysql:3306/usersdb
+      - DB_URL=jdbc:mysql://mysql:3306/productsdb
       - DB_USERNAME=root
       - DB_PASSWORD=1258963abc
     depends_on:
       - mysql
+      - apigateway
+  usersapi:
+    build: ./totos-usersAPI/usersAPI/
+    container_name: usersapi
+    depends_on:
+      - mysql
+      - apigateway
   mysql:
     image: mysql:8.0
     container_name: mysql
