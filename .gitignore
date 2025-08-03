@@ -1,0 +1,5 @@
+public.pem
+private.pem
+.env
+.vscode
+init.sql
