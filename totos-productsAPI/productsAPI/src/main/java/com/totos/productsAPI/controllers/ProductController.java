@@ -1,15 +1,22 @@
 package com.totos.productsAPI.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.totos.productsAPI.models.Products;
 import com.totos.productsAPI.services.ProductsService;
-import jakarta.validation.Valid;
-import org.apache.catalina.connector.Response;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/products")
@@ -20,7 +27,7 @@ public class ProductController {
 
     @GetMapping("/test")
     public String testEndpoint() {
-        return "You are at test endpoint!";
+        return "You are at the products test endpoint!";
     }
 
 
