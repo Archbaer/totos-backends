@@ -1,11 +1,12 @@
 package com.totos.productsAPI.services;
 
-import com.totos.productsAPI.models.Products;
-import com.totos.productsAPI.repositories.ProductsRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.totos.productsAPI.models.Products;
+import com.totos.productsAPI.repositories.ProductsRepository;
 
 @Service
 public class ProductsService {
@@ -22,6 +23,9 @@ public class ProductsService {
     }
 
     public Products createProduct(Products product) {
+        if (productsRepository.findByNameAndDescription(product.getName(), product.getDescription()).isPresent()) {
+            throw new RuntimeException("Product with the same name and description already exists.");
+        }
         return productsRepository.save(product);
     }
 
