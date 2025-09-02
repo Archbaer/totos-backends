@@ -10,8 +10,6 @@ Key goals:
 - Containerized services with Docker Compose
 - Clear examples of routing, role-based authorization, and persistence
 
----
-
 ## Tech Stack
 
 - Language: Java 21 (Eclipse Temurin)
@@ -26,8 +24,6 @@ Key goals:
 - Utility: Lombok (models/reducers), Spring Actuator (recommended)
 - Testing: JUnit / Spring Boot Test
 
----
-
 ## Repository Layout (high level)
 
 - totos-apigateway/apigateway — API Gateway (routing, auth filter)
@@ -38,8 +34,6 @@ Key goals:
 - .env — environment variables (not committed)
 - init.sql — DB initialization (databases/schema)
 
----
-
 ## Architecture (summary)
 
 Client -> API Gateway -> { Auth API, Users API, Products API }  
@@ -49,8 +43,6 @@ Key properties:
 - Stateless authentication with JWT
 - Role-based access control embedded in token claims
 - Keys persisted via environment variables (base64-encoded PEM) for containerized runs
-
----
 
 ## Generate RSA keys (recommended)
 
@@ -69,8 +61,6 @@ grep -v "-----" public.pem  | tr -d '\n' > public_b64.txt
 
 Important: remove PEM headers/footers and newlines; store the pure base64 text in env.
 
----
-
 ## Run locally with Docker Compose
 
 From repository root:
@@ -85,8 +75,6 @@ Services and ports (defaults):
 - Users API — http://localhost:8082
 - Products API — http://localhost:8083
 - MySQL — 3306
-
----
 
 ## Key Endpoints (examples)
 
@@ -105,15 +93,11 @@ Include header for secured endpoints:
 Authorization: Bearer <access-token>
 ```
 
----
-
 ## Troubleshooting
 
 - JWT errors → verify base64 encoding and that service uses same persistent keys.
 - Lombok/IDE errors → install Lombok plugin and use compatible JDK.
 - DB errors → check `init.sql`, docker volumes, and env DB credentials.
-
----
 
 ## Notes
 
