@@ -1,8 +1,8 @@
-# Totos Backends
+# Toto's Backends
 
 ## Overview
 
-Totos Backends is a microservices-based backend showcase built with Spring Boot. It demonstrates a secure, containerized architecture with an API Gateway, custom JWT authentication (RSA keys), user management, and product management services. The project is suitable for portfolio demos and small-scale deployments.
+Toto's Backends is a microservices-based backend showcase built with Spring Boot. It demonstrates a secure, containerized architecture with an API Gateway, custom JWT authentication (RSA keys), user management, and product management services. The project is suitable for portfolio demos and small-scale deployments.
 
 Key goals:
 - Service separation and modularity
@@ -44,13 +44,12 @@ Key properties:
 - Role-based access control embedded in token claims
 - Keys persisted via environment variables (base64-encoded PEM) for containerized runs
 
-## Generate RSA keys (recommended)
+## Generate RSA keys
 
 Generate keys and convert to base64 (one-liners):
 
 Linux / macOS:
 ```bash
-# generate 2048-bit private key (PKCS#8 recommended)
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 # extract public key (X.509)
 openssl rsa -pubout -in private.pem -out public.pem
